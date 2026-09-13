@@ -1,3 +1,63 @@
+@font-face {
+  font-family: 'Manrope';
+  src:
+    url('../assets/fonts/Manrope-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Manrope-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src:
+    url('../assets/fonts/Manrope-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Manrope-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url('../assets/fonts/Inter18pt-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Inter18pt-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url('../assets/fonts/Inter18pt-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Inter18pt-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url('../assets/fonts/Inter18pt-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/Inter18pt-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url('../assets/fonts/Inter18pt-SemiBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/Inter18pt-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --text-primary: #403f3d;
   --text-inverse: #e1d4c9;
@@ -20,6 +80,8 @@
   --background-modalcontrol: #665f55;
   --dark-bg-modal: var(--dark-bg-container);
   --dark-bg-modal-control: var(--dark-bg-page);
+  --font-family: 'Inter', sans-serif;
+  --second-family: 'Manrope', sans-serif;
 }
 
 /* Обнуление стилей */
