@@ -8,6 +8,7 @@ const right = document.querySelector('.right');
 const menuLinkHide = document.querySelector('.menu__item_hide');
 const controlLight = document.querySelector('.control_light');
 const controlDark = document.querySelector('.control_dark');
+const headerIcon = document.querySelector('.header__icon');
 
 window.addEventListener('resize', () => {
   if (parseInt(window.innerWidth) >= 819.98 && menu.classList.contains('active')) {
@@ -29,6 +30,7 @@ function toggleDark() {
   menuLinkHide.classList.toggle('dark');
   controlLight.classList.toggle('dark');
   controlDark.classList.toggle('dark');
+  headerIcon.classList.toggle('dark');
 }
 
 document.addEventListener('click', (e) => {

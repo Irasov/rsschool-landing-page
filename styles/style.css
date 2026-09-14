@@ -208,13 +208,20 @@ body.dark {
   border-radius: 100px;
   align-self: center;
 }
+.header__icon.dark {
+  border: 1px solid var(--dark-border-inverse);
+}
 .header__icon span::before,
 .header__icon span::after {
   content: '';
   position: absolute;
   width: 18px;
-  border-bottom: 2px solid var(--text-primary);
+  border-bottom: 2px solid var(--background-container);
   transition: all 0.3s ease 0s;
+}
+.header__icon.dark span::before,
+.header__icon.dark span::after {
+  border-bottom: 2px solid var(--dark-border-inverse);
 }
 .header__icon span::after {
   left: 13px;
