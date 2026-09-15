@@ -485,9 +485,22 @@ body.dark {
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
+.hero__link.dark {
+  background: var(--dark-bg-page);
+  color: var(--dark-text-primary);
+}
 .hero__icon {
   opacity: 0;
 }
 .hero__link:hover .hero__icon {
   opacity: 1;
+}
+.hero__icon_dark {
+  display: none;
+}
+.hero__link.dark .hero__icon {
+  display: none;
+}
+.hero__link.dark .hero__icon_dark {
+  display: block;
 }
