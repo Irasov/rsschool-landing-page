@@ -449,6 +449,7 @@ body.dark {
 .hero__container {
 }
 .hero__body {
+  padding: 0 0 100px 0;
 }
 .hero__block {
   padding: 100px 0px 100px 100px;
@@ -529,4 +530,61 @@ body.dark {
 }
 .hero__link.dark .hero__icon_dark {
   display: block;
+}
+/*****************************************/
+.resource {
+}
+.resource__container {
+}
+.resource__body {
+  padding: 0 0 100px 0;
+}
+.resource__title {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 125%;
+  color: var(--text-primary);
+}
+.resource span {
+  color: var(--text-accent);
+}
+.resource__gallery {
+  padding: 20px 0 0 0;
+  display: flex;
+  gap: 40px;
+}
+
+.resource__col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1 1 0;
+}
+
+.resource__img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.resource__img-wrap_tall {
+  aspect-ratio: 640 / 726;
+}
+
+.resource__img-wrap_short {
+  aspect-ratio: 640 / 500;
+}
+
+.resource__img {
+  transform: scale(1.1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.resource__img-wrap:hover .resource__img {
+  transform: scale(1);
 }
