@@ -186,6 +186,8 @@ body.dark {
 .header__logo {
   width: 100px;
   height: 60px;
+  position: relative;
+  z-index: 20;
 }
 .header__img {
   width: 100%;
@@ -202,6 +204,7 @@ body.dark {
 .header__icon {
   display: none;
   position: relative;
+  z-index: 20;
   width: 44px;
   height: 44px;
   border: 1px solid var(--background-container);
@@ -253,15 +256,21 @@ body.dark {
 }
 @media (max-width: 819.98px) {
   .menu {
-    position: absolute;
+    padding: 140px 0 0 0;
+    position: fixed;
     width: 100%;
     height: 100vh;
     right: -100%;
-    top: 140px;
+    top: 0;
+    background-color: var(--text-inverse);
+    z-index: 10;
   }
 }
 .menu.active {
   right: 0;
+}
+.menu.dark {
+  background-color: var(--dark-bg-page);
 }
 .menu__list {
   width: 100%;
@@ -342,6 +351,8 @@ body.dark {
 .control {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 20;
 }
 .control_body {
   display: flex;

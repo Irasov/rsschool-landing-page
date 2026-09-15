@@ -1,5 +1,5 @@
-const icon = document.querySelector('.menu');
-const menu = document.querySelector('.header__icon');
+const menu = document.querySelector('.menu');
+const icon = document.querySelector('.header__icon');
 const dark = document.querySelector('.control_dark');
 const light = document.querySelector('.control_light');
 const logo = document.querySelector('.header__logo');
@@ -18,7 +18,7 @@ window.addEventListener('resize', () => {
 });
 
 function toggleMenu() {
-  document.body.classList.toggle('lock');
+  document.body.classList.toggle('_lock');
   menu.classList.toggle('active');
   icon.classList.toggle('active');
 }
@@ -33,6 +33,7 @@ function toggleDark() {
   controlDark.classList.toggle('dark');
   headerIcon.classList.toggle('dark');
   heroLink.classList.toggle('dark');
+  menu.classList.toggle('dark');
 }
 
 document.addEventListener('click', (e) => {
