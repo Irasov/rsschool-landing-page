@@ -450,6 +450,16 @@ body.dark {
   object-fit: cover;
   border-radius: 40px;
 }
+@media (max-width: 768.98px) {
+  .hero__block {
+    padding: 100px 0px 100px 60px;
+  }
+}
+@media (max-width: 656.98px) {
+  .hero__block {
+    padding: 60px 16px;
+  }
+}
 .hero__title {
   max-width: 530px;
   font-weight: 600;
@@ -457,6 +467,11 @@ body.dark {
   font-size: 72px;
   line-height: 105%;
   color: var(--text-inverse);
+}
+@media (max-width: 656.98px) {
+  .hero__title {
+    font-size: 40px;
+  }
 }
 .hero__title span {
   color: var(--text-accent);
