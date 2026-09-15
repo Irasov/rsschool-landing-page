@@ -10,6 +10,7 @@ const controlLight = document.querySelector('.control_light');
 const controlDark = document.querySelector('.control_dark');
 const headerIcon = document.querySelector('.header__icon');
 const heroLink = document.querySelector('.hero__link');
+const resourceTitle = document.querySelector('.resource__title');
 
 window.addEventListener('resize', () => {
   if (parseInt(window.innerWidth) >= 819.98 && menu.classList.contains('active')) {
@@ -34,6 +35,7 @@ function toggleDark() {
   headerIcon.classList.toggle('dark');
   heroLink.classList.toggle('dark');
   menu.classList.toggle('dark');
+  resourceTitle.classList.toggle('dark');
 }
 
 document.addEventListener('click', (e) => {

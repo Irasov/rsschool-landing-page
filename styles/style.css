@@ -545,6 +545,9 @@ body.dark {
   line-height: 125%;
   color: var(--text-primary);
 }
+.resource__title.dark {
+  color: var(--dark-text-primary);
+}
 @media (max-width: 656.98px) {
   .resource__title {
     font-size: 32px;
