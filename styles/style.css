@@ -433,3 +433,61 @@ body.dark {
 }
 
 /**********************************************************/
+.hero {
+}
+.hero__container {
+}
+.hero__body {
+}
+.hero__block {
+  padding: 100px 0px 100px 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  background: url(../assets/images/hero.jpg) no-repeat;
+  background-position: center;
+  object-fit: cover;
+  border-radius: 40px;
+}
+.hero__title {
+  max-width: 530px;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 72px;
+  line-height: 105%;
+  color: var(--text-inverse);
+}
+.hero__title span {
+  color: var(--text-accent);
+}
+.hero__substring {
+  max-width: 530px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text-inverse);
+}
+.hero__link {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  border-radius: 100px;
+  padding: 20px 78px;
+  width: 200px;
+  height: 64px;
+  background: var(--text-inverse);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.hero__icon {
+  opacity: 0;
+}
+.hero__link:hover .hero__icon {
+  opacity: 1;
+}
