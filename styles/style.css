@@ -539,21 +539,21 @@ body.dark {
 .resource__body {
   padding: 0 0 100px 0;
 }
-.resource__title {
+.title {
   font-weight: 600;
   font-size: 60px;
   line-height: 125%;
   color: var(--text-primary);
 }
-.resource__title.dark {
+.title.dark {
   color: var(--dark-text-primary);
 }
 @media (max-width: 656.98px) {
-  .resource__title {
+  .title {
     font-size: 32px;
   }
 }
-.resource span {
+.title span {
   color: var(--text-accent);
 }
 .resource__gallery {
@@ -604,4 +604,107 @@ body.dark {
   .resource__img-wrap_short {
     display: none;
   }
+}
+/*********************************************/
+.products {
+}
+.products__container {
+}
+.products__body {
+  padding: 0 0 100px 0;
+}
+.products__title {
+  text-align: center;
+}
+.products__slider {
+}
+.slider {
+  padding: 40px 0 0 0;
+  position: relative;
+}
+.slider__body {
+  padding: 0 0 40px 0;
+  display: flex;
+  overflow: hidden;
+}
+.slider__slide {
+}
+.slide {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide__image {
+  max-width: 480px;
+}
+.slide__img {
+  width: 100%;
+}
+.slide__content {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+}
+.slide__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  text-align: center;
+  color: var(--text-primary);
+}
+.slide__subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--text-primary);
+}
+.slide__price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  text-align: center;
+  color: var(--text-primary);
+}
+.slider__pagination {
+  display: flex;
+  column-gap: 12px;
+  justify-content: center;
+}
+.slider__btn {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: var(--border-primary);
+}
+.slider__btn.act {
+  background-color: var(--background-container);
+}
+.slider__btn_one {
+}
+.slider__btn_two {
+}
+.slider__btn_three {
+}
+.slider__arrow {
+  position: absolute;
+  border: 1px solid var(--background-container);
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.slider__arrow_left {
+  top: 50%;
+  left: 0;
+}
+.slider__arrow_right {
+  top: 50%;
+  right: 0;
 }
