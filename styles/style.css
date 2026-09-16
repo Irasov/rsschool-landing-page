@@ -669,6 +669,15 @@ body.dark {
   text-align: center;
   color: var(--text-primary);
 }
+.slide.dark .slide__title {
+  color: var(--dark-text-primary);
+}
+.slide.dark .slide__subtitle {
+  color: var(--dark-text-primary);
+}
+.slide.dark .slide__price {
+  color: var(--dark-text-primary);
+}
 .slider__pagination {
   display: flex;
   column-gap: 12px;
@@ -682,6 +691,12 @@ body.dark {
 }
 .slider__btn.act {
   background-color: var(--background-container);
+}
+.slider__pagination.dark .slider__btn {
+  background-color: var(--dark-border-primary);
+}
+.slider__pagination.dark .slider__btn.act {
+  background-color: var(--dark-border-inverse);
 }
 .slider__btn_one {
 }
@@ -699,6 +714,11 @@ body.dark {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+@media (max-width: 656.98px) {
+  .slider__arrow {
+    display: none;
+  }
 }
 .slider__arrow_left {
   top: 50%;

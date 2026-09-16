@@ -11,6 +11,9 @@ const controlDark = document.querySelector('.control_dark');
 const headerIcon = document.querySelector('.header__icon');
 const heroLink = document.querySelector('.hero__link');
 const resourceTitle = document.querySelector('.resource__title');
+const productsTitle = document.querySelector('.products__title');
+const slide = document.querySelector('.slide');
+const sliderPagination = document.querySelector('.slider__pagination');
 
 window.addEventListener('resize', () => {
   if (parseInt(window.innerWidth) >= 819.98 && menu.classList.contains('active')) {
@@ -36,6 +39,9 @@ function toggleDark() {
   heroLink.classList.toggle('dark');
   menu.classList.toggle('dark');
   resourceTitle.classList.toggle('dark');
+  productsTitle.classList.toggle('dark');
+  slide.classList.toggle('dark');
+  sliderPagination.classList.toggle('dark');
 }
 
 document.addEventListener('click', (e) => {
