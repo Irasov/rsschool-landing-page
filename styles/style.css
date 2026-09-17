@@ -555,6 +555,7 @@ body.dark {
 }
 .title span {
   color: var(--text-accent);
+  font-style: italic;
 }
 .resource__gallery {
   padding: 20px 0 0 0;
