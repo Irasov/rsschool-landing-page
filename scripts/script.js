@@ -52,6 +52,10 @@ document.addEventListener('click', (e) => {
   if (targetElement.closest('.header__icon')) {
     toggleMenu();
   }
+  if (targetElement.closest('.menu__link')) {
+    console.log('GO');
+    if (icon.closest('.active')) toggleMenu();
+  }
   if (targetElement.closest('.control_dark')) {
     if (!logo.closest('.dark')) {
       toggleDark();
