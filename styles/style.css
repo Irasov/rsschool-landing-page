@@ -760,6 +760,9 @@ body.dark {
 }
 .title {
 }
+.app__body.dark .app__title {
+  color: var(--dark-text-primary);
+}
 .app__subtitle {
   max-width: 630px;
   font-weight: 400;
@@ -767,12 +770,15 @@ body.dark {
   line-height: 150%;
   color: var(--text-primary);
 }
-.app_btns {
+.app__body.dark .app__subtitle {
+  color: var(--dark-text-primary);
+}
+.app__btns {
   display: flex;
   column-gap: 20px;
 }
 @media (max-width: 656.98px) {
-  .app_btns {
+  .app__btns {
     max-width: 200px;
     flex-direction: column;
     row-gap: 20px;
@@ -787,6 +793,11 @@ body.dark {
   border: 1px solid var(--background-container);
   border-radius: 100px;
   text-decoration: none;
+  color: var(--text-primary);
+}
+.app__body.dark .app__btns .btn {
+  color: var(--dark-text-primary);
+  border: 1px solid var(--dark-border-inverse);
 }
 .btn__image {
   max-width: 36px;
@@ -794,6 +805,15 @@ body.dark {
 
 .btn__img {
   width: 100%;
+}
+.btn__img_hide {
+  display: none;
+}
+.app__body.dark .app__btns .btn .btn__img_hide {
+  display: block;
+}
+.app__body.dark .app__btns .btn .btn__img_light {
+  display: none;
 }
 .btn__text {
   display: flex;
@@ -805,13 +825,11 @@ body.dark {
   font-size: 10px;
   line-height: 140%;
   text-align: center;
-  color: var(--text-primary);
 }
 .btn__name {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: var(--text-primary);
 }
 .app_right {
   max-width: 630px;

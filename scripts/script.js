@@ -14,6 +14,8 @@ const resourceTitle = document.querySelector('.resource__title');
 const productsTitle = document.querySelector('.products__title');
 const slide = document.querySelector('.slide');
 const sliderPagination = document.querySelector('.slider__pagination');
+const app = document.querySelector('.app__body');
+const appBtns = document.querySelector('app__btns');
 
 window.addEventListener('resize', () => {
   if (parseInt(window.innerWidth) >= 819.98 && menu.classList.contains('active')) {
@@ -42,6 +44,7 @@ function toggleDark() {
   productsTitle.classList.toggle('dark');
   slide.classList.toggle('dark');
   sliderPagination.classList.toggle('dark');
+  app.classList.toggle('dark');
 }
 
 document.addEventListener('click', (e) => {
