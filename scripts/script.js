@@ -1,3 +1,5 @@
+const myStorage = window.localStorage;
+
 const menu = document.querySelector('.menu');
 const icon = document.querySelector('.header__icon');
 const dark = document.querySelector('.control_dark');
@@ -16,6 +18,16 @@ const slide = document.querySelector('.slide');
 const sliderPagination = document.querySelector('.slider__pagination');
 const app = document.querySelector('.app__body');
 const appBtns = document.querySelector('app__btns');
+let flag = 0;
+
+console.log(myStorage.getItem('theme'));
+if (!localStorage.getItem('theme')) {
+  localStorage.setItem('theme', 'light');
+}
+
+if (localStorage.getItem('theme') == 'dark') {
+  toggleDark();
+}
 
 window.addEventListener('resize', () => {
   if (parseInt(window.innerWidth) >= 819.98 && menu.classList.contains('active')) {
@@ -45,6 +57,18 @@ function toggleDark() {
   slide.classList.toggle('dark');
   sliderPagination.classList.toggle('dark');
   app.classList.toggle('dark');
+  console.log('toggle flag', flag);
+  if (flag == 1) {
+    if (myStorage.getItem('theme') == 'light') {
+      myStorage.setItem('theme', 'dark');
+    } else {
+      myStorage.setItem('theme', 'light');
+    }
+  } else {
+    flag = 1;
+  }
+  console.log('toggle flag', flag);
+  console.log('toggle', myStorage.getItem('theme'));
 }
 
 document.addEventListener('click', (e) => {
