@@ -20,12 +20,11 @@ const app = document.querySelector('.app__body');
 const appBtns = document.querySelector('app__btns');
 let flag = 0;
 
-console.log(myStorage.getItem('theme'));
-if (!localStorage.getItem('theme')) {
-  localStorage.setItem('theme', 'light');
+if (!myStorage.getItem('theme')) {
+  myStorage.setItem('theme', 'light');
 }
 
-if (localStorage.getItem('theme') == 'dark') {
+if (myStorage.getItem('theme') == 'dark') {
   toggleDark();
 }
 
@@ -42,33 +41,28 @@ function toggleMenu() {
 }
 
 function toggleDark() {
-  logo.classList.toggle('dark');
+  if (logo) logo.classList.toggle('dark');
   document.body.classList.toggle('dark');
-  menulink.classList.toggle('dark');
-  right.classList.toggle('dark');
-  menuLinkHide.classList.toggle('dark');
-  controlLight.classList.toggle('dark');
-  controlDark.classList.toggle('dark');
-  headerIcon.classList.toggle('dark');
-  heroLink.classList.toggle('dark');
-  menu.classList.toggle('dark');
-  resourceTitle.classList.toggle('dark');
-  productsTitle.classList.toggle('dark');
-  slide.classList.toggle('dark');
-  sliderPagination.classList.toggle('dark');
-  app.classList.toggle('dark');
-  console.log('toggle flag', flag);
-  if (flag == 1) {
+  if (menulink) menulink.classList.toggle('dark');
+  if (right) right.classList.toggle('dark');
+  if (menuLinkHide) menuLinkHide.classList.toggle('dark');
+  if (controlLight) controlLight.classList.toggle('dark');
+  if (controlDark) controlDark.classList.toggle('dark');
+  if (headerIcon) headerIcon.classList.toggle('dark');
+  if (heroLink) heroLink.classList.toggle('dark');
+  if (menu) menu.classList.toggle('dark');
+  if (resourceTitle) resourceTitle.classList.toggle('dark');
+  if (productsTitle) productsTitle.classList.toggle('dark');
+  if (slide) slide.classList.toggle('dark');
+  if (sliderPagination) sliderPagination.classList.toggle('dark');
+  if (app) app.classList.toggle('dark');
+  if (flag) {
     if (myStorage.getItem('theme') == 'light') {
       myStorage.setItem('theme', 'dark');
     } else {
       myStorage.setItem('theme', 'light');
     }
-  } else {
-    flag = 1;
   }
-  console.log('toggle flag', flag);
-  console.log('toggle', myStorage.getItem('theme'));
 }
 
 document.addEventListener('click', (e) => {
@@ -77,16 +71,17 @@ document.addEventListener('click', (e) => {
     toggleMenu();
   }
   if (targetElement.closest('.menu__link')) {
-    console.log('GO');
     if (icon.closest('.active')) toggleMenu();
   }
   if (targetElement.closest('.control_dark')) {
     if (!logo.closest('.dark')) {
+      flag = 1;
       toggleDark();
     }
   }
   if (targetElement.closest('.control_light')) {
     if (logo.closest('.dark')) {
+      flag = 1;
       toggleDark();
     }
   }
