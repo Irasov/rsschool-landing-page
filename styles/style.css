@@ -853,12 +853,29 @@ body.dark {
 .footer__container {
 }
 .footer__body {
+  width: 100%;
   padding: 100px 100px;
   border-radius: 40px;
   background: var(--background-container);
   display: flex;
   column-gap: 100px;
 }
+@media (max-width: 1115.98px) {
+  .footer__body {
+    padding: 100px 60px;
+    flex-direction: column;
+    row-gap: 100px;
+  }
+}
+@media (max-width: 656.98px) {
+  .footer__body {
+    width: 100%;
+    padding: 60px 16px;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+}
+
 .footer__info {
   display: flex;
   flex-direction: column;
@@ -867,6 +884,11 @@ body.dark {
 .footer__title {
   max-width: 530px;
   color: var(--text-inverse);
+}
+@media (max-width: 656.98px) {
+  .footer__title {
+    max-width: 314px;
+  }
 }
 .footer__social {
   display: flex;
