@@ -906,3 +906,114 @@ body.dark {
   background-image: url(../assets/images/address.png);
   background-repeat: no-repeat;
 }
+
+/******************************************************************************/
+.catalog {
+}
+.catalog__container {
+}
+.catalog__body {
+  padding: 0px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: center;
+}
+.catalog__title {
+  max-width: 800px;
+}
+.title {
+}
+.catalog__filter {
+}
+.filter {
+  display: flex;
+  column-gap: 16px;
+}
+.filter__item {
+}
+.item-filter {
+  border-radius: 100px;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+}
+.item-filter.act {
+  background: var(--background-container);
+}
+.item-filter__image {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border-primary);
+}
+.item-filter.act .item-filter__image {
+  background: var(--text-inverse);
+}
+.item-filter__img {
+}
+.item-filter__text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text-primary);
+}
+.item-filter.act .item-filter__text {
+  color: var(--text-inverse);
+}
+.catalog__items {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 40px;
+}
+.catalog__item {
+}
+.item-catalog {
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border: 1px solid var(--border-primary);
+  border-radius: 40px;
+}
+.item-catalog__image {
+  max-width: 310px;
+}
+.item-catalog__img {
+  max-width: 100%;
+  border-radius: 40px;
+}
+.item-catalog__body {
+  padding: 0 20px 20px 20px;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.item-catalog__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: var(--text-primary);
+}
+.item-catalog__subtitle {
+  max-width: 265px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text-primary);
+  flex-grow: 1;
+}
+.item-catalog__price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: var(--text-primary);
+}
