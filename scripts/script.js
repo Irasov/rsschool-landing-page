@@ -14,10 +14,13 @@ const headerIcon = document.querySelector('.header__icon');
 const heroLink = document.querySelector('.hero__link');
 const resourceTitle = document.querySelector('.resource__title');
 const productsTitle = document.querySelector('.products__title');
+const catalogTitle = document.querySelector('.catalog__title');
 const slide = document.querySelector('.slide');
 const sliderPagination = document.querySelector('.slider__pagination');
 const app = document.querySelector('.app__body');
-const appBtns = document.querySelector('app__btns');
+const appBtns = document.querySelector('.app__btns');
+const filter = document.querySelector('.filter');
+const catalogItems = document.querySelector('.catalog__items');
 let flag = 0;
 
 if (!myStorage.getItem('theme')) {
@@ -56,6 +59,9 @@ function toggleDark() {
   if (slide) slide.classList.toggle('dark');
   if (sliderPagination) sliderPagination.classList.toggle('dark');
   if (app) app.classList.toggle('dark');
+  if (catalogTitle) catalogTitle.classList.toggle('dark');
+  if (filter) filter.classList.toggle('dark');
+  if (catalogItems) catalogItems.classList.toggle('dark');
   if (flag) {
     if (myStorage.getItem('theme') == 'light') {
       myStorage.setItem('theme', 'dark');
