@@ -502,6 +502,7 @@ body.dark {
   text-align: center;
   color: var(--text-primary);
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease 0s;
 }
 .hero__link.dark {
@@ -762,13 +763,25 @@ body.dark {
   border-radius: 100px;
   text-decoration: none;
   color: var(--text-primary);
+  transition: all 0.3s ease 0s;
+}
+.btn:hover {
+  color: var(--dark-text-primary);
+  border: 1px solid var(--dark-border-inverse);
+  background: var(--background-container);
+}
+.btn:hover .btn__img_light {
+  display: none;
+}
+.btn:hover .btn__img_hide {
+  display: block;
 }
 .app__body.dark .app__btns .btn {
   color: var(--dark-text-primary);
   border: 1px solid var(--dark-border-inverse);
 }
 .btn__image {
-  max-width: 36px;
+  width: 36px;
 }
 
 .btn__img {
@@ -859,6 +872,20 @@ body.dark {
 .footer__social {
   display: flex;
   column-gap: 12px;
+}
+.footer__link {
+  border: 1px solid var(--border-primary);
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+.footer__link:hover {
+  background: var(--dark-bg-page);
+  border: 1px solid var(--dark-bg-page);
 }
 .contacts {
   display: flex;
