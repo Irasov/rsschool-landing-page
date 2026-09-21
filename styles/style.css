@@ -690,6 +690,29 @@ body.dark {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.slider__arrow:hover {
+  background: var(--background-container);
+}
+._left {
+  stroke: #403f3d;
+}
+.slider__arrow:hover ._left {
+  stroke: #e1d4c9;
+}
+._right {
+  stroke: #403f3d;
+}
+.slider__arrow:hover ._right {
+  stroke: #e1d4c9;
+}
+.slider__pagination.dark ~ .slider__arrow {
+  background: var(--background-container);
+}
+.slider__pagination.dark ~ .slider__arrow ._left,
+.slider__pagination.dark ~ .slider__arrow ._right {
+  stroke: #e1d4c9;
 }
 @media (max-width: 656.98px) {
   .slider__arrow {
@@ -1015,8 +1038,51 @@ body.dark {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  row-gap: 40px;
+}
+.block-catalog {
+  display: flex;
   column-gap: 40px;
   row-gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.block-catalog__body {
+  display: flex;
+  column-gap: 40px;
+  row-gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.block-catalog__open {
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--background-container);
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: url(../assets/images/refresh.png) no-repeat;
+  background-position: center;
+  object-fit: cover;
+}
+.block-catalog__refresh {
+}
+@media (max-width: 1439.98px) {
+  .block-catalog._hide .block-catalog__body {
+    display: none;
+  }
+  .block-catalog__open {
+    display: flex;
+  }
+  .block-catalog__open._hide {
+    display: none;
+  }
+  .block-catalog__open._hide ~ .block-catalog__body {
+    display: flex;
+  }
 }
 .catalog__item {
 }
@@ -1036,16 +1102,23 @@ body.dark {
   row-gap: 20px;
   border: 1px solid var(--border-primary);
   border-radius: 40px;
+  cursor: pointer;
+}
+.item-catalog:hover .item-catalog__image .item-catalog__img {
+  transform: scale(1);
 }
 .catalog__items.dark .item-catalog {
   border: 1px solid var(--dark-border-primary);
 }
 .item-catalog__image {
+  overflow: hidden;
   max-width: 310px;
+  border-radius: 40px;
 }
 .item-catalog__img {
+  transition: all 0.4s ease 0s;
   max-width: 100%;
-  border-radius: 40px;
+  transform: scale(1.1);
 }
 .item-catalog__body {
   padding: 0 20px 20px 20px;
