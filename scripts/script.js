@@ -91,4 +91,7 @@ document.addEventListener('click', (e) => {
       toggleDark();
     }
   }
+  if (targetElement.closest('.block-catalog__open')) {
+    targetElement.classList.toggle('_hide');
+  }
 });
