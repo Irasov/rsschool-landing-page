@@ -1036,16 +1036,23 @@ body.dark {
   row-gap: 20px;
   border: 1px solid var(--border-primary);
   border-radius: 40px;
+  cursor: pointer;
+}
+.item-catalog:hover .item-catalog__image .item-catalog__img {
+  transform: scale(1);
 }
 .catalog__items.dark .item-catalog {
   border: 1px solid var(--dark-border-primary);
 }
 .item-catalog__image {
+  overflow: hidden;
   max-width: 310px;
+  border-radius: 40px;
 }
 .item-catalog__img {
+  transition: all 0.4s ease 0s;
   max-width: 100%;
-  border-radius: 40px;
+  transform: scale(1.1);
 }
 .item-catalog__body {
   padding: 0 20px 20px 20px;
