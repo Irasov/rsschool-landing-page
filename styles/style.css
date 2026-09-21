@@ -690,6 +690,29 @@ body.dark {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.slider__arrow:hover {
+  background: var(--background-container);
+}
+._left {
+  stroke: #403f3d;
+}
+.slider__arrow:hover ._left {
+  stroke: #e1d4c9;
+}
+._right {
+  stroke: #403f3d;
+}
+.slider__arrow:hover ._right {
+  stroke: #e1d4c9;
+}
+.slider__pagination.dark ~ .slider__arrow {
+  background: var(--background-container);
+}
+.slider__pagination.dark ~ .slider__arrow ._left,
+.slider__pagination.dark ~ .slider__arrow ._right {
+  stroke: #e1d4c9;
 }
 @media (max-width: 656.98px) {
   .slider__arrow {
