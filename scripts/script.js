@@ -16,11 +16,14 @@ const resourceTitle = document.querySelector('.resource__title');
 const productsTitle = document.querySelector('.products__title');
 const catalogTitle = document.querySelector('.catalog__title');
 const slide = document.querySelector('.slide');
+const slider = document.querySelector('.slider__body');
 const sliderPagination = document.querySelector('.slider__pagination');
 const app = document.querySelector('.app__body');
 const appBtns = document.querySelector('.app__btns');
 const filter = document.querySelector('.filter');
 const catalogItems = document.querySelector('.catalog__items');
+const sliderLeft = document.querySelector('._left');
+const sliderRight = document.querySelector('._right');
 let flag = 0;
 
 if (!myStorage.getItem('theme')) {
@@ -62,6 +65,7 @@ function toggleDark() {
   if (catalogTitle) catalogTitle.classList.toggle('dark');
   if (filter) filter.classList.toggle('dark');
   if (catalogItems) catalogItems.classList.toggle('dark');
+  if (slider) slider.classList.toggle('dark');
   if (flag) {
     if (myStorage.getItem('theme') == 'light') {
       myStorage.setItem('theme', 'dark');
@@ -93,6 +97,10 @@ document.addEventListener('click', (e) => {
   }
   if (targetElement.closest('.block-catalog__open')) {
     targetElement.classList.toggle('_hide');
+  }
+  if (targetElement.closest('._left')) {
+  }
+  if (targetElement.closest('._right')) {
   }
 });
 
