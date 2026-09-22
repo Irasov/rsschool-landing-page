@@ -95,3 +95,11 @@ document.addEventListener('click', (e) => {
     targetElement.classList.toggle('_hide');
   }
 });
+
+document.addEventListener('keydown', (e) => {
+  if (e.key == 'Escape') {
+    if (icon.classList.contains('active')) {
+      toggleMenu();
+    }
+  }
+});
