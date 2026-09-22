@@ -32,7 +32,7 @@ if (myStorage.getItem('theme') == 'dark') {
 }
 
 window.addEventListener('resize', () => {
-  if (parseInt(window.innerWidth) >= 819.98 && menu.classList.contains('active')) {
+  if (parseInt(window.innerWidth) >= 768.98 && menu.classList.contains('active')) {
     toggleMenu();
   }
 });
