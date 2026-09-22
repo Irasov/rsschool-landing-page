@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee House</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" href="./assets/images/icon.ico" type="image/x-icon" />
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__body">
+            <a href="#" class="header__logo">
+              <img
+                src="./assets/images/logo.svg"
+                alt="logo"
+                class="header__img header__img_light"
+              />
+              <img
+                src="./assets/images/logo-dark.svg"
+                alt="logo"
+                class="header__img header__img_dark"
+              />
+            </a>
+            <nav class="header__menu menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="#favorite" class="menu__link">Favorite coffee</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#about" class="menu__link">About</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#app" class="menu__link">Mobile app</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#footer" class="menu__link">Contact us</a>
+                </li>
+                <li class="menu__item menu__item_hide">
+                  <a href="menu.html" class="menu__link menu__link_cup">Menu</a>
+                  <img src="./assets/images/cup.svg" alt="cup" class="menu__img" />
+                  <img
+                    src="./assets/images/cup-dark.svg"
+                    alt="cup"
+                    class="menu__img menu__img_dark"
+                  />
+                </li>
+              </ul>
+            </nav>
+            <div class="right">
+              <div class="control">
+                <div class="control_body">
+                  <div class="control_light">
+                    <svg
+                      class="icon-l-default"
+                      width="36"
+                      height="36"
+                      viewBox="0 0 36 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="36" height="36" rx="18" fill="#B0907A" />
+                      <path
+                        d="M17 10V8C17 7.45 17.45 7 18 7C18.55 7 19 7.45 19 8V10C19 10.55 18.55 11 18 11C17.45 11 17 10.55 17 10ZM24.36 13.05L25.77 11.63C26.16 11.24 26.16 10.61 25.77 10.22C25.38 9.83 24.75 9.83 24.36 10.22L22.95 11.64C22.56 12.03 22.56 12.66 22.95 13.05C23.34 13.44 23.97 13.44 24.36 13.05ZM28 17H26C25.45 17 25 17.45 25 18C25 18.55 25.45 19 26 19H28C28.55 19 29 18.55 29 18C29 17.45 28.55 17 28 17ZM18 25C17.45 25 17 25.45 17 26V28C17 28.55 17.45 29 18 29C18.55 29 19 28.55 19 28V26C19 25.45 18.55 25 18 25ZM11.64 13.05L10.22 11.64C9.83 11.25 9.83 10.61 10.22 10.23C10.61 9.85 11.25 9.84 11.63 10.23L13.04 11.64C13.43 12.03 13.43 12.67 13.04 13.05C12.65 13.43 12.02 13.44 11.64 13.05ZM22.95 22.95C22.56 23.34 22.56 23.98 22.95 24.36L24.36 25.77C24.75 26.16 25.39 26.16 25.77 25.77C26.16 25.38 26.16 24.74 25.77 24.36L24.36 22.95C23.98 22.56 23.34 22.56 22.95 22.95ZM8 19H10C10.55 19 11 18.55 11 18C11 17.45 10.55 17 10 17H8C7.45 17 7 17.45 7 18C7 18.55 7.45 19 8 19ZM11.64 25.78L13.05 24.37C13.44 23.98 13.44 23.34 13.05 22.96C12.66 22.58 12.02 22.57 11.64 22.96L10.23 24.37C9.84 24.76 9.84 25.4 10.23 25.78C10.61 26.17 11.25 26.17 11.64 25.78ZM18 12C14.69 12 12 14.69 12 18C12 21.31 14.69 24 18 24C21.31 24 24 21.31 24 18C24 14.69 21.31 12 18 12Z"
+                        fill="#E1D4C9"
+                      />
+                    </svg>
+                    <svg
+                      class="icon-l-hover"
+                      width="36"
+                      height="36"
+                      viewBox="0 0 44 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21 12V10C21 9.45 21.45 9 22 9C22.55 9 23 9.45 23 10V12C23 12.55 22.55 13 22 13C21.45 13 21 12.55 21 12ZM28.36 15.05L29.77 13.63C30.16 13.24 30.16 12.61 29.77 12.22C29.38 11.83 28.75 11.83 28.36 12.22L26.95 13.64C26.56 14.03 26.56 14.66 26.95 15.05C27.34 15.44 27.97 15.44 28.36 15.05ZM32 19H30C29.45 19 29 19.45 29 20C29 20.55 29.45 21 30 21H32C32.55 21 33 20.55 33 20C33 19.45 32.55 19 32 19ZM22 27C21.45 27 21 27.45 21 28V30C21 30.55 21.45 31 22 31C22.55 31 23 30.55 23 30V28C23 27.45 22.55 27 22 27ZM15.64 15.05L14.22 13.64C13.83 13.25 13.83 12.61 14.22 12.23C14.61 11.85 15.25 11.84 15.63 12.23L17.04 13.64C17.43 14.03 17.43 14.67 17.04 15.05C16.65 15.43 16.02 15.44 15.64 15.05ZM26.95 24.95C26.56 25.34 26.56 25.98 26.95 26.36L28.36 27.77C28.75 28.16 29.39 28.16 29.77 27.77C30.16 27.38 30.16 26.74 29.77 26.36L28.36 24.95C27.98 24.56 27.34 24.56 26.95 24.95ZM12 21H14C14.55 21 15 20.55 15 20C15 19.45 14.55 19 14 19H12C11.45 19 11 19.45 11 20C11 20.55 11.45 21 12 21ZM15.64 27.78L17.05 26.37C17.44 25.98 17.44 25.34 17.05 24.96C16.66 24.58 16.02 24.57 15.64 24.96L14.23 26.37C13.84 26.76 13.84 27.4 14.23 27.78C14.61 28.17 15.25 28.17 15.64 27.78ZM22 14C18.69 14 16 16.69 16 20C16 23.31 18.69 26 22 26C25.31 26 28 23.31 28 20C28 16.69 25.31 14 22 14Z"
+                        fill="#E1D4C9"
+                      />
+                    </svg>
+                  </div>
+                  <div class="control_dark">
+                    <svg
+                      class="icon-default"
+                      width="36"
+                      height="36"
+                      viewBox="0 0 36 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M18 9C13.03 9 9 13.03 9 18C9 22.97 13.03 27 18 27C22.97 27 27 22.97 27 18C27 17.54 26.96 17.08 26.9 16.64C25.92 18.01 24.32 18.9 22.5 18.9C19.52 18.9 17.1 16.48 17.1 13.5C17.1 11.69 17.99 10.08 19.36 9.1C18.92 9.04 18.46 9 18 9Z"
+                        fill="#403F3D"
+                      />
+                    </svg>
+                    <svg
+                      class="icon-hover"
+                      width="36"
+                      height="36"
+                      viewBox="0 0 36 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="36" height="36" rx="18" fill="#665F55" />
+                      <path
+                        d="M18 9C13.03 9 9 13.03 9 18C9 22.97 13.03 27 18 27C22.97 27 27 22.97 27 18C27 17.54 26.96 17.08 26.9 16.64C25.92 18.01 24.32 18.9 22.5 18.9C19.52 18.9 17.1 16.48 17.1 13.5C17.1 11.69 17.99 10.08 19.36 9.1C18.92 9.04 18.46 9 18 9Z"
+                        fill="#E1D4C9"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="menu__menu">
+                <a href="menu.html" class="menu__link menu__link_cup">
+                  <span>Menu</span>
+                  <img src="./assets/images/cup.svg" alt="cup" class="menu__cup" />
+                  <img
+                    src="./assets/images/cup-dark.svg"
+                    alt="cup"
+                    class="menu__cup menu__cup_dark"
+                  />
+                </a>
+              </div>
+              <div class="header__icon">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="mainpage">
+        <section class="hero">
+          <div class="hero__container">
+            <div class="hero__body">
+              <div class="hero__block">
+                <h1 class="hero__title"><span>Enjoy</span> premium coffee at our charming cafe</h1>
+                <p class="hero__substring">
+                  With its inviting atmosphere and delicious coffee options, the Coffee House
+                  Resource is a popular destination for coffee lovers and those seeking a warm and
+                  inviting space to enjoy their favorite beverage.
+                </p>
+                <a href="menu.html" class="hero__link">
+                  <span>Menu</span>
+                  <img src="./assets/images/cup.svg" alt="icon" class="hero__icon" />
+                  <img
+                    src="./assets/images/cup-dark.svg"
+                    alt="icon"
+                    class="hero__icon hero__icon_dark"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="products" id="favorite">
+          <div class="products__container">
+            <div class="products__body">
+              <h2 class="products__title title">Choose your <span>favorite</span> coffee</h2>
+              <div class="products__slider slider">
+                <div class="slider__body">
+                  <div class="slider__slide slide">
+                    <div class="slide__image">
+                      <img src="./assets/images/frapp.png" alt="frapp" class="slide__img" />
+                    </div>
+                    <div class="slide__content">
+                      <h3 class="slide__title">S’mores Frappuccino</h3>
+                      <p class="slide__subtitle">
+                        This new drink takes an espresso and mixes it with brown sugar and cinnamon
+                        before being topped with oat milk.
+                      </p>
+                      <span class="slide__price"> $5.50 </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__pagination">
+                  <button class="slider__btn slider__btn_one act"></button>
+                  <button class="slider__btn slider__btn_two"></button>
+                  <button class="slider__btn slider__btn_three"></button>
+                </div>
+                <div class="slider__arrow slider__arrow_left">
+                  <svg
+                    class="_left"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18.5 12H6M12 18L6 12L12 6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="slider__arrow slider__arrow_right">
+                  <svg
+                    class="_right"
+                    width="14"
+                    height="13"
+                    viewBox="0 0 14 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.5 6.5H13M7 12.5L13 6.5L7 0.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="resource" id="about">
+          <div class="resource__container">
+            <div class="resource__body">
+              <h2 class="resource__title title">
+                Resource is <span>the perfect and cozy place</span> where you can enjoy a variety of
+                hot beverages, relax, catch up with friends, or get some work done.
+              </h2>
+              <div class="resource__gallery">
+                <div class="resource__col">
+                  <div class="resource__img-wrap resource__img-wrap_tall">
+                    <img src="./assets/images/img1.jpg" alt="image" class="resource__img" />
+                  </div>
+                  <div class="resource__img-wrap resource__img-wrap_short">
+                    <img src="./assets/images/img2.jpg" alt="image" class="resource__img _hide" />
+                  </div>
+                </div>
+                <div class="resource__col">
+                  <div class="resource__img-wrap resource__img-wrap_short">
+                    <img src="./assets/images/img3.jpg" alt="image" class="resource__img" />
+                  </div>
+                  <div class="resource__img-wrap resource__img-wrap_tall">
+                    <img src="./assets/images/img4.jpg" alt="image" class="resource__img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="app" id="app">
+          <div class="app__container">
+            <div class="app__body">
+              <div class="app__left">
+                <h2 class="app__title title"><span>Download</span> our app to start ordering</h2>
+                <div class="app__subtitle">
+                  Download the Resource app today and experience the comfort of ordering your
+                  favorite coffee from wherever you are
+                </div>
+                <div class="app__btns">
+                  <a href="#" class="app__btn btn">
+                    <div class="btn__image">
+                      <img
+                        src="./assets/images/app.png"
+                        alt="play"
+                        class="btn__img btn__img_light"
+                      />
+                      <img
+                        src="./assets/images/app-dark.png"
+                        alt="play"
+                        class="btn__img btn__img_hide"
+                      />
+                    </div>
+                    <div class="btn__text">
+                      <span class="btn__title">Available on the</span>
+                      <span class="btn__name">App Store</span>
+                    </div>
+                  </a>
+                  <a href="#" class="app__btn btn">
+                    <div class="btn__image">
+                      <img
+                        src="./assets/images/play.png"
+                        alt="play"
+                        class="btn__img btn__img_light"
+                      />
+                      <img
+                        src="./assets/images/play-dark.png"
+                        alt="play"
+                        class="btn__img btn__img_hide"
+                      />
+                    </div>
+                    <div class="btn__text">
+                      <span class="btn__title">Available on</span>
+                      <span class="btn__name">Google Play</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="app__right">
+                <img src="./assets/images/phone.png" alt="phone" class="app__image" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer" id="footer">
+        <div class="footer__container">
+          <div class="footer__body">
+            <div class="footer__info">
+              <div class="footer__title title">
+                Sip, Savor, Smile. <span>It’s coffee time!</span>
+              </div>
+              <div class="footer__social">
+                <a href="#" class="footer__link">
+                  <img src="./assets/images/twt.png" alt="twt" class="footer__img" />
+                </a>
+                <a href="#" class="footer__link">
+                  <img src="./assets/images/inst.png" alt="inst" class="footer__img" />
+                </a>
+                <a href="#" class="footer__link">
+                  <img src="./assets/images/fb.png" alt="fb" class="footer__img" />
+                </a>
+              </div>
+            </div>
+            <div class="footer__contacts contacts">
+              <span class="contacts__title">Contact us</span>
+              <div class="contacts__block">
+                <a
+                  href="https://maps.app.goo.gl/datBsi4hjNVV6nEj8"
+                  target="_blank"
+                  class="contacts__contact contacts__contact_address"
+                  >8558 Green Rd., LA</a
+                >
+                <a href="tel:+16035550123" class="contacts__contact contacts__contact_phone"
+                  >+1 (603) 555-0123</a
+                >
+                <div class="contacts__contact contacts__contact_hours">Mon–Sat: 9:00–23:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
