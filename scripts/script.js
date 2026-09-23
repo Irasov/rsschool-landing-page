@@ -15,16 +15,38 @@ const heroLink = document.querySelector('.hero__link');
 const resourceTitle = document.querySelector('.resource__title');
 const productsTitle = document.querySelector('.products__title');
 const catalogTitle = document.querySelector('.catalog__title');
-const slide = document.querySelector('.slide');
-const slider = document.querySelector('.slider__body');
+const slides = Array.from(document.querySelectorAll('.slide'));
+const slider = document.querySelector('.slider__line');
 const sliderPagination = document.querySelector('.slider__pagination');
 const app = document.querySelector('.app__body');
 const appBtns = document.querySelector('.app__btns');
 const filter = document.querySelector('.filter');
 const catalogItems = document.querySelector('.catalog__items');
-const sliderLeft = document.querySelector('._left');
-const sliderRight = document.querySelector('._right');
+const dots = document.querySelectorAll('.slider__btn');
 let flag = 0;
+const totalSlides = slides.length;
+let currentSlide = 1;
+let isAnimate = false;
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[totalSlides - 1].cloneNode(true);
+slider.appendChild(firstClone);
+slider.insertBefore(lastClone, slides[0]);
+
+function start() {
+  setPosition(false);
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      if (isAnimate) return;
+      isAnimate = true;
+      currentSlide = i + 1;
+      setPosition(true);
+      updateDots(i);
+      setTimeout(() => {
+        isAnimate = false;
+      }, 500);
+    });
+  });
+}
 
 if (!myStorage.getItem('theme')) {
   myStorage.setItem('theme', 'light');
@@ -59,7 +81,6 @@ function toggleDark() {
   if (menu) menu.classList.toggle('dark');
   if (resourceTitle) resourceTitle.classList.toggle('dark');
   if (productsTitle) productsTitle.classList.toggle('dark');
-  if (slide) slide.classList.toggle('dark');
   if (sliderPagination) sliderPagination.classList.toggle('dark');
   if (app) app.classList.toggle('dark');
   if (catalogTitle) catalogTitle.classList.toggle('dark');
@@ -98,9 +119,16 @@ document.addEventListener('click', (e) => {
   if (targetElement.closest('.block-catalog__open')) {
     targetElement.classList.toggle('_hide');
   }
-  if (targetElement.closest('._left')) {
+  if (targetElement.closest('._left') || targetElement.closest('.slider__arrow_left')) {
+    goPrev();
   }
-  if (targetElement.closest('._right')) {
+  if (targetElement.closest('._right') || targetElement.closest('.slider__arrow_right')) {
+    goNext();
+  }
+  if (targetElement.closest('.slider__btn')) {
+    if (targetElement.classList.contains('slider__btn_one')) {
+      console.log('0');
+    }
   }
 });
 
@@ -111,3 +139,41 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+
+function setPosition(withAnimation = true) {
+  slider.classList.toggle('animate', withAnimation);
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function updateDots(index) {
+  dots.forEach((dot, i) => dot.classList.toggle('act', i === index));
+}
+
+function goNext() {
+  if (isAnimate) return;
+  isAnimate = true;
+  currentSlide++;
+  setPosition(true);
+  updateDots((currentSlide - 1) % totalSlides);
+}
+
+function goPrev() {
+  if (isAnimate) return;
+  isAnimate = true;
+  currentSlide--;
+  setPosition(true);
+  updateDots((currentSlide - 1 + totalSlides) % totalSlides);
+}
+
+slider.addEventListener('transitionend', () => {
+  if (currentSlide === totalSlides + 1) {
+    currentSlide = 1;
+    setPosition(false);
+  } else if (currentSlide === 0) {
+    currentSlide = totalSlides;
+    setPosition(false);
+  }
+  isAnimate = false;
+});
+
+start();

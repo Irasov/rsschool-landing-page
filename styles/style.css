@@ -608,14 +608,21 @@ body.dark {
 }
 .slider__body {
   padding: 0 0 40px 0;
-  display: flex;
   overflow: hidden;
+}
+.slider__line {
+  display: flex;
+  align-items: stretch;
+}
+.slider__line.animate {
+  transition: transform 0.4s ease 0s;
 }
 .slide {
   flex: 1 0 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: stretch;
 }
 .slide__image {
   max-width: 480px;
@@ -628,6 +635,8 @@ body.dark {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: stretch;
+  height: 100%;
   row-gap: 16px;
 }
 .slide__title {
@@ -638,6 +647,7 @@ body.dark {
   color: var(--text-primary);
 }
 .slide__subtitle {
+  flex-grow: 1;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -651,13 +661,13 @@ body.dark {
   text-align: center;
   color: var(--text-primary);
 }
-.slide.dark .slide__title {
+.slider__line.dark .slide .slide__content .slide__title {
   color: var(--dark-text-primary);
 }
-.slide.dark .slide__subtitle {
+.slider__line.dark .slide .slide__content .slide__subtitle {
   color: var(--dark-text-primary);
 }
-.slide.dark .slide__price {
+.slider__line.dark .slide .slide__content .slide__price {
   color: var(--dark-text-primary);
 }
 .slider__pagination {
