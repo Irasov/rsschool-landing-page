@@ -27,11 +27,10 @@ const filters = document.querySelectorAll('.item-filter');
 const TYPE = ['coffee', 'tea', 'dessert'];
 let currentType = TYPE[0];
 let flag = 0;
-
+let currentSlide = 1;
+let isAnimate = false;
+const totalSlides = slides.length;
 if (slider) {
-  const totalSlides = slides.length;
-  let currentSlide = 1;
-  let isAnimate = false;
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[totalSlides - 1].cloneNode(true);
   slider.appendChild(firstClone);
@@ -291,4 +290,6 @@ function toggleType(type) {
   }
 }
 
-start();
+document.addEventListener('DOMContentLoaded', () => {
+  start();
+});
