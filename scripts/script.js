@@ -23,8 +23,9 @@ const appBtns = document.querySelector('.app__btns');
 const filter = document.querySelector('.filter');
 const catalog = document.querySelector('.catalog__body');
 const dots = document.querySelectorAll('.slider__btn');
+const filters = document.querySelectorAll('.item-filter');
 const TYPE = ['coffee', 'tea', 'dessert'];
-const currentType = TYPE[0];
+let currentType = TYPE[0];
 let flag = 0;
 
 if (slider) {
@@ -139,6 +140,27 @@ document.addEventListener('click', (e) => {
     if (targetElement.classList.contains('slider__btn_one')) {
       console.log('0');
     }
+  }
+  if (targetElement.closest('.item-filter_coffee')) {
+    toggleType(0);
+    currentType = TYPE[0];
+    const oldItems = catalog.lastElementChild;
+    catalog.removeChild(oldItems);
+    catalog.appendChild(createCatalog(currentType));
+  }
+  if (targetElement.closest('.item-filter_tea')) {
+    toggleType(1);
+    currentType = TYPE[1];
+    const oldItems = catalog.lastElementChild;
+    catalog.removeChild(oldItems);
+    catalog.appendChild(createCatalog(currentType));
+  }
+  if (targetElement.closest('.item-filter_dessert')) {
+    toggleType(2);
+    currentType = TYPE[2];
+    const oldItems = catalog.lastElementChild;
+    catalog.removeChild(oldItems);
+    catalog.appendChild(createCatalog(currentType));
   }
 });
 
@@ -256,6 +278,17 @@ function createCatalog(type) {
     catalogItems.appendChild(blockHide);
   }
   return catalogItems;
+}
+
+function toggleType(type) {
+  for (let i = 0; i < TYPE.length; i++) {
+    if (filters[i].classList.contains('act')) {
+      filters[i].classList.toggle('act');
+    }
+    if (i === type) {
+      filters[i].classList.toggle('act');
+    }
+  }
 }
 
 start();
