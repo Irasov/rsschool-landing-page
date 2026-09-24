@@ -21,9 +21,12 @@ const sliderPagination = document.querySelector('.slider__pagination');
 const app = document.querySelector('.app__body');
 const appBtns = document.querySelector('.app__btns');
 const filter = document.querySelector('.filter');
-const catalogItems = document.querySelector('.catalog__items');
+const catalog = document.querySelector('.catalog__body');
 const dots = document.querySelectorAll('.slider__btn');
+const TYPE = ['coffee', 'tea', 'dessert'];
+const currentType = TYPE[0];
 let flag = 0;
+
 if (slider) {
   const totalSlides = slides.length;
   let currentSlide = 1;
@@ -35,7 +38,6 @@ if (slider) {
 }
 
 function start() {
-  console.log(window.location.hostname);
   if (!myStorage.getItem('theme')) {
     myStorage.setItem('theme', 'light');
   }
@@ -59,12 +61,52 @@ function start() {
     });
   }
 
-  if (catalogItems) {
+  if (catalog) {
+    const catalogItems = document.createElement('div');
+    catalogItems.classList.add('catalog__items');
+    let limit = 1;
+    let hide = 0;
+    const blockVisible = document.createElement('div');
+    blockVisible.classList.add('catalog__block', 'block-catalog');
+    const blockVisibleBody = document.createElement('div');
+    blockVisibleBody.classList.add('block-catalog__body');
+    const blockHide = document.createElement('div');
+    blockHide.classList.add('catalog__block', 'block-catalog', '_hide');
+    const open = document.createElement('div');
+    open.classList.add('block-catalog__open');
+    blockHide.appendChild(open);
+    const blockHideBody = document.createElement('div');
+    blockHideBody.classList.add('block-catalog__body');
     for (let i = 0; i < products.length; i += 1) {
-      catalogItems.appendChild(
-        createItem(products[i].image, products[i].name, products[i].description, products[i].price),
-      );
+      if (limit <= 4) {
+        limit += 1;
+        blockVisibleBody.appendChild(
+          createItem(
+            products[i].image,
+            products[i].name,
+            products[i].description,
+            products[i].price,
+          ),
+        );
+      } else {
+        hide = 1;
+        blockHideBody.appendChild(
+          createItem(
+            products[i].image,
+            products[i].name,
+            products[i].description,
+            products[i].price,
+          ),
+        );
+      }
     }
+    blockVisible.appendChild(blockVisibleBody);
+    catalogItems.appendChild(blockVisible);
+    if (hide) {
+      blockHide.appendChild(blockHideBody);
+      catalogItems.appendChild(blockHide);
+    }
+    catalog.appendChild(catalogItems);
   }
 }
 
@@ -97,7 +139,7 @@ function toggleDark() {
   if (app) app.classList.toggle('dark');
   if (catalogTitle) catalogTitle.classList.toggle('dark');
   if (filter) filter.classList.toggle('dark');
-  if (catalogItems) catalogItems.classList.toggle('dark');
+  if (catalog) catalog.classList.toggle('dark');
   if (slider) slider.classList.toggle('dark');
   if (flag) {
     if (myStorage.getItem('theme') == 'light') {

@@ -1096,13 +1096,13 @@ body.dark {
 }
 .catalog__item {
 }
-.catalog__items.dark .item-catalog .item-catalog__body .item-catalog__title {
+.catalog__body.dark .catalog__items .item-catalog .item-catalog__body .item-catalog__title {
   color: var(--dark-text-primary);
 }
-.catalog__items.dark .item-catalog .item-catalog__body .item-catalog__subtitle {
+.catalog__body.dark .catalog__items .item-catalog .item-catalog__body .item-catalog__subtitle {
   color: var(--dark-text-primary);
 }
-.catalog__items.dark .item-catalog .item-catalog__body .item-catalog__price {
+.catalog__body.dark .catalog__items .item-catalog .item-catalog__body .item-catalog__price {
   color: var(--dark-text-primary);
 }
 .item-catalog {
