@@ -1157,3 +1157,13 @@ body.dark {
   line-height: 125%;
   color: var(--text-primary);
 }
+
+/***************************************************/
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+}

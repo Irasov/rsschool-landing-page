@@ -135,11 +135,6 @@ document.addEventListener('click', (e) => {
   if (targetElement.closest('._right') || targetElement.closest('.slider__arrow_right')) {
     goNext();
   }
-  if (targetElement.closest('.slider__btn')) {
-    if (targetElement.classList.contains('slider__btn_one')) {
-      console.log('0');
-    }
-  }
   if (targetElement.closest('.item-filter_coffee')) {
     toggleType(0);
     currentType = TYPE[0];
@@ -160,6 +155,11 @@ document.addEventListener('click', (e) => {
     const oldItems = catalog.lastElementChild;
     catalog.removeChild(oldItems);
     catalog.appendChild(createCatalog(currentType));
+  }
+  if (targetElement.closest('.item-catalog')) {
+    const card = targetElement.closest('.item-catalog');
+    console.log('return', card.dataset.id);
+    showModal(card.dataset.id);
   }
 });
 
@@ -208,9 +208,10 @@ if (slider) {
   });
 }
 
-function createItem(image, name, text, price) {
+function createItem(image, name, text, price, id) {
   const item = document.createElement('div');
   item.classList.add('catalog__item', 'item-catalog');
+  item.setAttribute('data-id', id);
   const itemImage = document.createElement('div');
   itemImage.classList.add('item-catalog__image');
   const itemImg = document.createElement('img');
@@ -260,6 +261,7 @@ function createCatalog(type) {
         products[i].name,
         products[i].description,
         products[i].price,
+        products[i].id,
       );
       if (limit <= 4) {
         limit += 1;
@@ -288,6 +290,32 @@ function toggleType(type) {
       filters[i].classList.toggle('act');
     }
   }
+}
+
+function showModal(id) {
+  const product = products.find((t) => t.id === id);
+  document.body.appendChild(createModal(product));
+}
+
+function createModal(product) {
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  const modalBody = document.createElement('div');
+  modalBody.classList.add('modal__body');
+  const modalLeft = document.createElement('div');
+  modalLeft.classList.add('modal__left');
+  const modalImage = document.createElement('div');
+  modalImage.classList.add('modal__img');
+  const modalImg = document.createElement('img');
+  modalImg.setAttribute('src', product.image);
+  modalImage.appendChild(modalImg);
+  modalLeft.appendChild(modalImage);
+
+  const modalRight = document.createElement('div');
+  modalLeft.classList.add('modal__Right');
+  modalBody.appendChild(modalLeft);
+  modal.appendChild(modalBody);
+  return modal;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
