@@ -62,51 +62,7 @@ function start() {
   }
 
   if (catalog) {
-    const catalogItems = document.createElement('div');
-    catalogItems.classList.add('catalog__items');
-    let limit = 1;
-    let hide = 0;
-    const blockVisible = document.createElement('div');
-    blockVisible.classList.add('catalog__block', 'block-catalog');
-    const blockVisibleBody = document.createElement('div');
-    blockVisibleBody.classList.add('block-catalog__body');
-    const blockHide = document.createElement('div');
-    blockHide.classList.add('catalog__block', 'block-catalog', '_hide');
-    const open = document.createElement('div');
-    open.classList.add('block-catalog__open');
-    blockHide.appendChild(open);
-    const blockHideBody = document.createElement('div');
-    blockHideBody.classList.add('block-catalog__body');
-    for (let i = 0; i < products.length; i += 1) {
-      if (limit <= 4) {
-        limit += 1;
-        blockVisibleBody.appendChild(
-          createItem(
-            products[i].image,
-            products[i].name,
-            products[i].description,
-            products[i].price,
-          ),
-        );
-      } else {
-        hide = 1;
-        blockHideBody.appendChild(
-          createItem(
-            products[i].image,
-            products[i].name,
-            products[i].description,
-            products[i].price,
-          ),
-        );
-      }
-    }
-    blockVisible.appendChild(blockVisibleBody);
-    catalogItems.appendChild(blockVisible);
-    if (hide) {
-      blockHide.appendChild(blockHideBody);
-      catalogItems.appendChild(blockHide);
-    }
-    catalog.appendChild(catalogItems);
+    catalog.appendChild(createCatalog(currentType));
   }
 }
 
@@ -258,6 +214,48 @@ function createItem(image, name, text, price) {
   itemBody.appendChild(itemPrice);
   item.appendChild(itemBody);
   return item;
+}
+
+function createCatalog(type) {
+  const catalogItems = document.createElement('div');
+  catalogItems.classList.add('catalog__items');
+  let limit = 1;
+  let hide = 0;
+  const blockVisible = document.createElement('div');
+  blockVisible.classList.add('catalog__block', 'block-catalog');
+  const blockVisibleBody = document.createElement('div');
+  blockVisibleBody.classList.add('block-catalog__body');
+  const blockHide = document.createElement('div');
+  blockHide.classList.add('catalog__block', 'block-catalog', '_hide');
+  const open = document.createElement('div');
+  open.classList.add('block-catalog__open');
+  blockHide.appendChild(open);
+  const blockHideBody = document.createElement('div');
+  blockHideBody.classList.add('block-catalog__body');
+  for (let i = 0; i < products.length; i += 1) {
+    if (products[i].category === currentType) {
+      const item = createItem(
+        products[i].image,
+        products[i].name,
+        products[i].description,
+        products[i].price,
+      );
+      if (limit <= 4) {
+        limit += 1;
+        blockVisibleBody.appendChild(item);
+      } else {
+        hide = 1;
+        blockHideBody.appendChild(item);
+      }
+    }
+  }
+  blockVisible.appendChild(blockVisibleBody);
+  catalogItems.appendChild(blockVisible);
+  if (hide) {
+    blockHide.appendChild(blockHideBody);
+    catalogItems.appendChild(blockHide);
+  }
+  return catalogItems;
 }
 
 start();

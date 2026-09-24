@@ -1080,7 +1080,7 @@ body.dark {
 }
 .block-catalog__refresh {
 }
-@media (max-width: 1439.98px) {
+@media (max-width: 768.98px) {
   .block-catalog._hide .block-catalog__body {
     display: none;
   }
