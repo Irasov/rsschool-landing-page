@@ -305,17 +305,46 @@ function createModal(product) {
   const modalLeft = document.createElement('div');
   modalLeft.classList.add('modal__left');
   const modalImage = document.createElement('div');
-  modalImage.classList.add('modal__img');
+  modalImage.classList.add('modal__image');
   const modalImg = document.createElement('img');
+  modalImg.classList.add('modal__img');
   modalImg.setAttribute('src', product.image);
   modalImage.appendChild(modalImg);
   modalLeft.appendChild(modalImage);
-
   const modalRight = document.createElement('div');
-  modalLeft.classList.add('modal__Right');
+  modalRight.classList.add('modal__right');
+  const modalText = document.createElement('div');
+  modalText.classList.add('modal__text');
+  const modalTitle = document.createElement('h2');
+  modalTitle.classList.add('modal__title');
+  modalTitle.textContent = product.name;
+  const modalSubTitle = document.createElement('p');
+  modalSubTitle.textContent = product.description;
+  modalSubTitle.classList.add('modal__subtitle');
+  modalText.appendChild(modalTitle);
+  modalText.appendChild(modalSubTitle);
+  const modalSize = document.createElement('div');
+  modalSize.classList.add('modal__size', 'size-modal');
+  const modalSizeTitle = document.createElement('span');
+  modalSizeTitle.classList.add('size-modal__title');
+  modalSizeTitle.textContent = 'Size';
+  const modalSizeBlock = document.createElement('div');
+  modalSizeBlock.classList.add('size-modal__block');
+  //const options = createOptions(product.sizes);
+  createOptions(product.sizes);
+  modalRight.appendChild(modalText);
   modalBody.appendChild(modalLeft);
+  modalBody.appendChild(modalRight);
   modal.appendChild(modalBody);
   return modal;
+}
+
+function createOptions(product) {
+  const options = [];
+  for (let key in product) {
+    console.log(`${key}: ${product[key]}`);
+    console.log(Object.values(product[key])[0]);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
