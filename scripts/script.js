@@ -328,11 +328,54 @@ function createModal(product) {
   const modalSizeTitle = document.createElement('span');
   modalSizeTitle.classList.add('size-modal__title');
   modalSizeTitle.textContent = 'Size';
+  modalSize.appendChild(modalSizeTitle);
   const modalSizeBlock = document.createElement('div');
   modalSizeBlock.classList.add('size-modal__block');
-  //const options = createOptions(product.sizes);
-  createOptions(product.sizes);
+  let options = createOptions(product.sizes);
+  for (let i = 0; i < options.length; i++) {
+    modalSizeBlock.appendChild(options[i]);
+  }
+  modalSize.appendChild(modalSizeBlock);
+  const modalAdd = document.createElement('div');
+  modalAdd.classList.add('modal__add', 'add-modal');
+  const modalAddTitle = document.createElement('span');
+  modalAddTitle.classList.add('add-modal__title');
+  modalAddTitle.textContent = 'Additives';
+  modalAdd.appendChild(modalAddTitle);
+  const modalAddBlock = document.createElement('div');
+  modalAddBlock.classList.add('add-modal__block');
+  options = createOptions(product.additives);
+  for (let i = 0; i < options.length; i++) {
+    modalAddBlock.appendChild(options[i]);
+  }
+  modalAdd.appendChild(modalAddBlock);
+  const modalTotal = document.createElement('div');
+  modalTotal.classList.add('modal__total', 'total');
+  const totalName = document.createElement('span');
+  totalName.classList.add('total__item');
+  totalName.textContent = 'Total:';
+  modalTotal.appendChild(totalName);
+  const totalValue = document.createElement('span');
+  totalValue.classList.add('total__item');
+  totalValue.textContent = product.price;
+  modalTotal.appendChild(totalName);
+  modalTotal.appendChild(totalValue);
+  const modalMessage = document.createElement('div');
+  modalMessage.classList.add('modal_message', 'message');
+  const message = document.createElement('p');
+  message.classList.add('message__text');
+  message.textContent =
+    'The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.';
+  modalMessage.appendChild(message);
+  const modalBtn = document.createElement('button');
+  modalBtn.classList.add('modal__btn');
+  modalBtn.textContent = 'Close';
   modalRight.appendChild(modalText);
+  modalRight.appendChild(modalSize);
+  modalRight.appendChild(modalAdd);
+  modalRight.appendChild(modalTotal);
+  modalRight.appendChild(modalMessage);
+  modalRight.appendChild(modalBtn);
   modalBody.appendChild(modalLeft);
   modalBody.appendChild(modalRight);
   modal.appendChild(modalBody);
@@ -342,9 +385,21 @@ function createModal(product) {
 function createOptions(product) {
   const options = [];
   for (let key in product) {
+    const container = document.createElement('div');
+    container.classList.add('size-modal__item', 'item-modal');
+    const name = document.createElement('div');
+    name.classList.add('item-modal__name');
+    name.textContent = key;
+    const value = document.createElement('div');
+    value.classList.add('item-modal__value');
+    value.textContent = Object.values(product[key])[0];
+    container.appendChild(name);
+    container.appendChild(value);
+    options.push(container);
     console.log(`${key}: ${product[key]}`);
     console.log(Object.values(product[key])[0]);
   }
+  return options;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
