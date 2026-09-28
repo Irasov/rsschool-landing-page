@@ -158,8 +158,10 @@ document.addEventListener('click', (e) => {
   }
   if (targetElement.closest('.item-catalog')) {
     const card = targetElement.closest('.item-catalog');
-    console.log('return', card.dataset.id);
     showModal(card.dataset.id);
+  }
+  if (targetElement.closest('.modal__btn')) {
+    closeModal();
   }
 });
 
@@ -168,6 +170,7 @@ document.addEventListener('keydown', (e) => {
     if (icon.classList.contains('active')) {
       toggleMenu();
     }
+    closeModal();
   }
 });
 
@@ -298,6 +301,7 @@ function showModal(id) {
 }
 
 function createModal(product) {
+  document.body.classList.toggle('_lock');
   const modal = document.createElement('div');
   modal.classList.add('modal');
   const modalBody = document.createElement('div');
@@ -396,10 +400,16 @@ function createOptions(product) {
     container.appendChild(name);
     container.appendChild(value);
     options.push(container);
-    console.log(`${key}: ${product[key]}`);
-    console.log(Object.values(product[key])[0]);
   }
   return options;
+}
+
+function closeModal() {
+  const modal = document.querySelector('.modal');
+  if (modal) {
+    modal.remove();
+    document.body.classList.toggle('_lock');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
