@@ -1249,9 +1249,21 @@ body.dark {
   border: 1px solid var(--border-primary);
   border-radius: 100px;
   padding: 8px 16px 8px 8px;
+  cursor: pointer;
+}
+.item-modal.act {
+  background: var(--background-container);
 }
 .modal.dark .modal__body .modal__right .size-modal .size-modal__block .item-modal {
   border: 1px solid var(--dark-border-primary);
+}
+.modal.dark .modal__body .modal__right .size-modal .size-modal__block .item-modal.act {
+  background: var(--dark-bg-modal-control);
+  border: 1px solid var(--dark-bg-modal-control);
+}
+.modal.dark .modal__body .modal__right .add-modal .add-modal__block .item-modal.act {
+  background: var(--dark-bg-modal-control);
+  border: 1px solid var(--dark-bg-modal-control);
 }
 .item-modal__name {
   display: flex;
@@ -1268,6 +1280,29 @@ body.dark {
   color: var(--text-primary);
   background: var(--border-primary);
   border-radius: 100px;
+}
+.item-modal.act .item-modal__name {
+  background: var(--text-inverse);
+}
+.modal.dark
+  .modal__body
+  .modal__right
+  .size-modal
+  .size-modal__block
+  .item-modal.act
+  .item-modal__name {
+  background: var(--dark-bg-container);
+  color: var(--dark-text-primary);
+}
+.modal.dark
+  .modal__body
+  .modal__right
+  .add-modal
+  .add-modal__block
+  .item-modal.act
+  .item-modal__name {
+  background: var(--dark-bg-container);
+  color: var(--dark-text-primary);
 }
 .modal.dark
   .modal__body
@@ -1287,6 +1322,9 @@ body.dark {
   line-height: 150%;
   color: var(--text-primary);
 }
+.item-modal.act .item-modal__value {
+  color: var(--text-inverse);
+}
 .modal.dark
   .modal__body
   .modal__right
@@ -1300,6 +1338,9 @@ body.dark {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
+}
+.modal.dark .modal__body .modal__right .add-modal .add-modal__block .item-modal {
+  border: 1px solid var(--dark-border-primary);
 }
 .add-modal__title {
   font-family: var(--font-family);
@@ -1364,6 +1405,9 @@ body.dark {
   background-repeat: no-repeat;
   background-position: center;
 }
+.modal.dark .modal__body .modal__right .message .message__text::before {
+  background: url(../assets/images/info-dark.png);
+}
 .modal__btn {
   border: 1px solid var(--background-container);
   border-radius: 100px;
@@ -1375,4 +1419,10 @@ body.dark {
   text-align: center;
   color: var(--text-primary);
   background-color: var(--text-inverse);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.modal__btn:hover {
+  background: var(--background-container);
+  color: var(--text-inverse);
 }

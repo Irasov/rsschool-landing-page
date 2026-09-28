@@ -348,7 +348,7 @@ function createModal(product) {
   modalAdd.appendChild(modalAddTitle);
   const modalAddBlock = document.createElement('div');
   modalAddBlock.classList.add('add-modal__block');
-  options = createOptions(product.additives);
+  options = createOptions(product.additives, true);
   for (let i = 0; i < options.length; i++) {
     modalAddBlock.appendChild(options[i]);
   }
@@ -360,8 +360,9 @@ function createModal(product) {
   totalName.textContent = 'Total:';
   modalTotal.appendChild(totalName);
   const totalValue = document.createElement('span');
-  totalValue.classList.add('total__item');
-  totalValue.textContent = product.price;
+  totalValue.classList.add('total__item', 'total__item_price');
+  totalValue.textContent = Number(product.price).toFixed(2);
+  totalValue.setAttribute('data-price', product.price);
   modalTotal.appendChild(totalName);
   modalTotal.appendChild(totalValue);
   const modalMessage = document.createElement('div');
@@ -384,24 +385,43 @@ function createModal(product) {
   modalBody.appendChild(modalRight);
   modal.appendChild(modalBody);
   if (menu.classList.contains('dark')) modal.classList.add('dark');
+  updateTotal(modal);
   return modal;
 }
 
-function createOptions(product) {
+function createOptions(items, multiple = false) {
   const options = [];
-  for (let key in product) {
+
+  Object.entries(items).forEach(([key, item], index) => {
     const container = document.createElement('div');
     container.classList.add('size-modal__item', 'item-modal');
+    if (!multiple && index === 0) container.classList.add('act');
+    container.setAttribute('data-price', item['add-price']);
+
     const name = document.createElement('div');
     name.classList.add('item-modal__name');
-    name.textContent = key;
+    name.textContent = multiple ? index + 1 : key; // у добавок: 1, 2, 3
+
     const value = document.createElement('div');
     value.classList.add('item-modal__value');
-    value.textContent = Object.values(product[key])[0];
-    container.appendChild(name);
-    container.appendChild(value);
+    value.textContent = multiple ? item.name : item.size;
+
+    container.append(name, value);
+
+    container.addEventListener('click', () => {
+      if (multiple) {
+        container.classList.toggle('act'); // добавки: вкл/выкл
+      } else {
+        if (container.classList.contains('act')) return;
+        options.forEach((el) => el.classList.remove('act'));
+        container.classList.add('act'); // размер: только один
+      }
+      updateTotal();
+    });
+
     options.push(container);
-  }
+  });
+
   return options;
 }
 
@@ -411,6 +431,17 @@ function closeModal() {
     modal.remove();
     document.body.classList.toggle('_lock');
   }
+}
+
+function updateTotal(root = document) {
+  const sum = root.querySelector('.total__item_price');
+  let total = Number(sum.dataset.price); // базовая цена товара
+
+  root.querySelectorAll('.item-modal.act').forEach((el) => {
+    total += Number(el.dataset.price);
+  });
+
+  sum.textContent = total.toFixed(2);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
