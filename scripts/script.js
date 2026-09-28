@@ -383,6 +383,7 @@ function createModal(product) {
   modalBody.appendChild(modalLeft);
   modalBody.appendChild(modalRight);
   modal.appendChild(modalBody);
+  if (menu.classList.contains('dark')) modal.classList.add('dark');
   return modal;
 }
 
