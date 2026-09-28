@@ -163,6 +163,9 @@ document.addEventListener('click', (e) => {
   if (targetElement.closest('.modal__btn')) {
     closeModal();
   }
+  if (targetElement.classList.contains('modal')) {
+    closeModal();
+  }
 });
 
 document.addEventListener('keydown', (e) => {
