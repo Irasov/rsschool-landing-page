@@ -1180,10 +1180,31 @@ body.dark {
   background-color: var(--text-inverse);
   border-radius: 40px;
 }
+@media (max-width: 829.98px) {
+  .modal__body {
+    min-width: 688px;
+  }
+}
+@media (max-width: 709.98px) {
+  .modal__body {
+    min-width: 342px;
+  }
+}
+@media (max-width: 367.98px) {
+  .modal__body {
+    min-width: 0;
+    max-width: 342px;
+  }
+}
 .modal.dark .modal__body {
   background-color: var(--dark-bg-modal);
 }
 .modal__left {
+}
+@media (max-width: 709.98px) {
+  .modal__left {
+    display: none;
+  }
 }
 .modal__image {
   max-width: 310px;
@@ -1242,6 +1263,15 @@ body.dark {
 .size-modal__block {
   display: flex;
   column-gap: 8px;
+  flex-wrap: wrap;
+}
+@media (max-width: 829.98px) {
+  .size-modal__block {
+    display: flex;
+    column-gap: 10px;
+    row-gap: 8px;
+    flex-wrap: wrap;
+  }
 }
 .item-modal {
   display: flex;
@@ -1355,6 +1385,14 @@ body.dark {
 .add-modal__block {
   display: flex;
   column-gap: 8px;
+}
+@media (max-width: 829.98px) {
+  .add-modal__block {
+    display: flex;
+    column-gap: 10px;
+    row-gap: 8px;
+    flex-wrap: wrap;
+  }
 }
 .modal.dark .modal__body .modal__right .add-modal .add-modal__block .item-modal .item-modal__name {
   background: var(--dark-border-primary);
